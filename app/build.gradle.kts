@@ -9,8 +9,8 @@ android {
 
     defaultConfig {
         applicationId = "com.xtv.app"
-        minSdkPreview = "TiramisuPrivacySandbox"
-        targetSdkPreview = "TiramisuPrivacySandbox"
+        minSdkPreview = "21"
+        targetSdkPreview = "21"
         versionCode = 1
         versionName = "1.0"
 
