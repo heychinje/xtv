@@ -1,19 +1,19 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.xtv.app"
-    compileSdkPreview = "TiramisuPrivacySandbox"
+    compileSdkPreview = libs.versions.compileSdk.get()
 
     defaultConfig {
         applicationId = "com.xtv.app"
-        minSdkPreview = "21"
-        targetSdkPreview = "21"
+        minSdkPreview = libs.versions.minSdk.get()
+        targetSdkPreview = libs.versions.targetSdk.get()
         versionCode = 1
         versionName = "1.0"
-
     }
 
     buildTypes {
@@ -26,17 +26,18 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility(libs.versions.java.get())
+        targetCompatibility(libs.versions.java.get())
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = libs.versions.java.get()
     }
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.leanback:leanback:1.0.0")
-    implementation("com.github.bumptech.glide:glide:4.11.0")
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.leanback)
+    implementation(libs.glide)
+    implementation(libs.support.annotations)
 }

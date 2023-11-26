@@ -1,25 +1,4 @@
-pluginManagement {
-    repositories {
-        maven { url = uri("https://maven.aliyun.com/repository/public/") }
-        maven { url = uri("https://maven.aliyun.com/repository/google/") }
-        maven { url = uri("https://maven.aliyun.com/repository/jcenter/") }
-        maven { url = uri("https://maven.aliyun.com/repository/central/") }
-        google()
-        mavenCentral()
-        gradlePluginPortal()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        maven { url = uri("https://maven.aliyun.com/repository/public/") }
-        maven { url = uri("https://maven.aliyun.com/repository/google/") }
-        maven { url = uri("https://maven.aliyun.com/repository/jcenter/") }
-        maven { url = uri("https://maven.aliyun.com/repository/central/") }
-        google()
-        mavenCentral()
-    }
-}
+apply(from = "./gradle/shared.settings.gradle.kts")
 
 rootProject.name = "XTV"
 include(":app")
